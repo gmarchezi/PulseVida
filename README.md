@@ -1,4 +1,4 @@
-# Pulseira - POO1
+# PulseVida - POO1
 
 Trabalho desenvolvido na disciplina de Programação Orientada a Objetos I do curso de Bacharelado em Sistemas de Informação, IFES Serra.
 
