@@ -13,7 +13,7 @@ https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.
 
 ### Protótipo (Mockup): 
 
-
+https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Project%202.pdf
 
 ### Diário de Bordo - Daily Log
 
