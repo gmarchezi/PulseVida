@@ -11,10 +11,6 @@ tanto para empresas que possuem como produto fim a prestação de serviços veic
 que possuem outros produtos/serviços fim, como exemplo uma empresa alimentícia que possue uma frota veicular.
 O sistema atua na administração organizacional e contábil dos veículos, gerando relatórios e comparações.
 
-Email: gabrielmarchezi@gmail.com <br>
-Contato: 99748-6913
-
-
 
 ### Descrição do Projeto:
 O trabalho em questão possui o objetivo de desenvolver um sistema de monitoramento cardíaco de um usuário utilizando os conteúdos conceituais e técnicos abordados na disciplina. O sistema está sendo modelado para atender a necessidade de pessoas com doenças cardíacas e riscos de acidentes cardiovasculares de monitorarem sua frequência cardíaca e notificar as pessoas selecionadas caso algo esteja fora do normal. Utilizaremos a linguagem JAVA e a IDE NetBeans.<br>
