@@ -29,4 +29,8 @@ https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Project%202.pdf
 
 https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing
 
+### Documento de Requisitos:
+
+https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing
+
 
