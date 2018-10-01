@@ -1,8 +1,9 @@
-# PulseVida - POO1
+# PulseVida
 
 Trabalho desenvolvido na disciplina de Programação Orientada a Objetos I do curso de Bacharelado em Sistemas de Informação, IFES Serra.
 
-Grupo: Guilherme Bodart, Higor Rebello, Gabriel Marchezi
+Grupo POO: Guilherme Bodart, Higor Rebello, Gabriel Marchezi
+Grupo Análise: Gabriel Marchezi, Higor Rebello, Vitor Zanoni e Felipe Santos.
 
 ## Mini-Mundo:
 
