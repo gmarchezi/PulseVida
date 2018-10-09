@@ -26,6 +26,9 @@ https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.
 
 https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Project%202.pdf
 
+### Trello:
+https://trello.com/b/fX00lfH3
+
 ### Diário de Bordo - Daily Log
 
 https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing
