@@ -24,7 +24,7 @@ https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.
 
 ### Protótipo (Mockup): 
 
-https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Project%202.pdf
+https://github.com/gmarchezi/PulseVida/blob/master/PrototipoPV.pdf
 
 ### Trello:
 https://trello.com/b/fX00lfH3
