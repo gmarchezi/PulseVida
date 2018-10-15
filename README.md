@@ -7,10 +7,23 @@ Grupo Análise: Gabriel Marchezi, Higor Rebello, Vitor Zanoni e Felipe Santos.
 
 ## Mini-Mundo:
 
-O objetivo do nosso sistema é ser uma forte ferramenta na administração de grandes frotas veiculares
-tanto para empresas que possuem como produto fim a prestação de serviços veiculares tanto para empresas
-que possuem outros produtos/serviços fim, como exemplo uma empresa alimentícia que possue uma frota veicular.
-O sistema atua na administração organizacional e contábil dos veículos, gerando relatórios e comparações.
+Doenças cardiovasculares são a principal causa de morte em todo o planeta. 17,7 
+milhões de pessoas morreram por causa de doenças cardiovasculares em 2015, o que 
+representou 31% de todas as mortes a nível global. A Organização Mundial da Saúde 
+(OMS) diz que os números desse tipo de doença poderiam diminuir com melhorias no 
+acesso à saúde, com maior foco no controle da pressão arterial, colesterol e outras 
+condições que aumentos os riscos das doenças se desenvolverem, atividades físicas 
+diárias de no mínimo 30 minutos ajudam bastante na prevenção dessas doenças. 
+O sistema proposto vem seguindo a tendência da Internet of Things (IoT), a ideia 
+consiste em utilizar uma smartband equipada com um sensor cardíaco e tecnologia 
+BlueTooth, a pulseira fará o monitoramento continuo da frequência cardíaca do 
+usuário, armazenará um histórico de no máximo 60 dias dos dados coletados e terá 
+um sistema de alerta que enviará mensagens SMS para os contatos selecionados pelo 
+usuário caso frequências cardíacas monitoradas estejam fora da normalidade, o alerta 
+irá conter o nome do usuário, o número do celular e a opção de enviar a localização 
+atual do usuário. A pulseira também terá vibração que poderá ser utilizada para 
+controle de medicação, o usuário irá definir os dias da semana e horário de uso dos 
+seus medicamentos e assim terá um maior controle sobre o uso dos mesmos.<br>
 
 
 ### Descrição do Projeto:
