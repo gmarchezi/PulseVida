@@ -50,4 +50,7 @@ https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/
 
 https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing
 
+### Diagrama de Classes:
+
+https://github.com/hmrebell0/PulseVida/blob/master/Diagrama_PulseVida.png
 
