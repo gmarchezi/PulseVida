@@ -7,7 +7,7 @@ package pulsevida;
 
 /**
  *
- * @author 
+ * @author Guilherme Bodart, Gaybriel Pontes
  */
 public class Contato extends Pessoa {
     
