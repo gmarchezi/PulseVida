@@ -5,6 +5,7 @@
  */
 package pulsevida;
 
+import java.util.ArrayList;
 /**
  *
  * @author 
@@ -12,6 +13,7 @@ package pulsevida;
 public class Usuario extends Pessoa {
     private String email;
     private String senha;
+    private ArrayList<FrequenciaCardiaca> historico;
     
     public Usuario(String nome, String celular, String email, String senha){
         super(nome, celular);

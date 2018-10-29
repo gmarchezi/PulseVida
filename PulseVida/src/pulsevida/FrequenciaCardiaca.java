@@ -13,11 +13,14 @@ package pulsevida;
  */
 public class FrequenciaCardiaca {
     private int frequencia;
+    private String data;
+    
     
     public void atualizarFrequencia(int frequencia){
         this.frequencia = getFrequencia();
         setFrequencia(frequencia);
     }
+    
 
     public int getFrequencia() {
         return frequencia;
