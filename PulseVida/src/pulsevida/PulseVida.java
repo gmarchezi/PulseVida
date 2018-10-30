@@ -19,7 +19,7 @@ public class PulseVida {
         Monitor pulseira = new Monitor();
         HorarioRemedio remedio = new HorarioRemedio("Atlansil", 200, "terca/quinta", "21:00");
         pulseira.simularFrequencia();
-        remedio.notificaRemedio();
+        remedio.notificaRemedio(remedio.getHorario(), remedio.getNomeRemedio(), remedio.getDose());
     }
     
 }
