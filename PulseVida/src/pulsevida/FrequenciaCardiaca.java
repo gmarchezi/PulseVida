@@ -9,7 +9,7 @@ package pulsevida;
 
 /**
  *
- * @author 
+ * @author teste teste
  */
 public class FrequenciaCardiaca {
     private int frequencia;
