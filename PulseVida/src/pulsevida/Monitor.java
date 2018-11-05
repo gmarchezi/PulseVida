@@ -5,6 +5,8 @@
  */
 package pulsevida;
 
+import java.text.DateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,16 +18,20 @@ public class Monitor {
     public Monitor(){
     }
     
-    public void disparaNotificacao(int freq, String nomePessoa){
-        //Exemplo de notificação que será enviada via sms e/ou e-mail.
-        //Notificacao notificacao = new Notificacao(nomeUsuario, celularContato, mensagem, dataHora, localizacao);
+    public void disparaNotificacao(int freq, String nomePessoa, String celular){
+        //Exemplo de notificação que será enviada via sms e/ou e-mail
+        String mensagem = "O paciente " + nomePessoa + " registrou uma frequencia cardiaca de " + freq + " bpm.";
+        java.util.Date data = new Date();
+        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+        String localizacao = "Rua Jair Messias Bolsonaro, numero 17, Bairro Mito";
+        Notificacao notificacao = new Notificacao(nomePessoa, celular, mensagem, dataF, localizacao);
         System.out.println("Atenção! Notificacão enviada pois o paciente " + nomePessoa + " registrou uma frequência de " + freq + "bpm.");
         //JOptionPane.ShowMessageDialog(null, "Atenção! Notificacão enviada pois o paciente #xyz registrou uma frequência de " + freq + "bpm.");
     }
     
     public void monitoraFrequencia(int freq, Pessoa pessoa){        
         if ((freq < 60) || (freq > 100)){
-            this.disparaNotificacao(freq,pessoa.getNome());
+            this.disparaNotificacao(freq, pessoa.getNome(), pessoa.getCelular());
         }
     }    
     
