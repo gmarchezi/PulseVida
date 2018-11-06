@@ -37,45 +37,15 @@ public class MonitorTest {
     public void tearDown() {
     }
 
+   
     /**
-     * Test of disparaNotificacao method, of class Monitor.
+     * Test of Disparanotificacao method, of class Monitor.
      */
     @Test
-    public void testDisparaNotificacao() {
-        System.out.println("disparaNotificacao");
-        int freq = 0;
-        String nomePessoa = "";
-        String celular = "";
+    public void testDisparanotificacao() {
         Monitor instance = new Monitor();
-        instance.disparaNotificacao(freq, nomePessoa, celular);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.disparaNotificacao(150,"Gabriel", "Guiga","997483568");
+        //Verificar se foi criada a notificacao corretamente, n sei fazer isso kkkk
+        fail("Leia o comentário no teste!");
     }
-
-    /**
-     * Test of monitoraFrequencia method, of class Monitor.
-     */
-    @Test
-    public void testMonitoraFrequencia() {
-        System.out.println("monitoraFrequencia");
-        int freq = 0;
-        Pessoa pessoa = null;
-        Monitor instance = new Monitor();
-        instance.monitoraFrequencia(freq, pessoa);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of simularFrequencia method, of class Monitor.
-     */
-    @Test
-    public void testSimularFrequencia() {
-        System.out.println("simularFrequencia");
-        Monitor instance = new Monitor();
-        instance.simularFrequencia();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
