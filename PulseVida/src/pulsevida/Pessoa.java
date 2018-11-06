@@ -10,10 +10,14 @@ package pulsevida;
  * @author 
  */
 public class Pessoa {
+    private int id;
     private String nome;    
     private String celular;
     
-    public Pessoa(String nome, String celular){
+    public Pessoa(){}
+    
+    public Pessoa(int id, String nome, String celular){
+        this.id = id;
         this.nome = nome;
         this.celular = celular;
     }
@@ -33,6 +37,12 @@ public class Pessoa {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

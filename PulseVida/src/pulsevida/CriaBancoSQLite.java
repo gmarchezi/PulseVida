@@ -5,7 +5,8 @@
  */
 package pulsevida;
 
-import conexoes.ConexaoSQLite;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -13,43 +14,95 @@ import java.sql.Statement;
  *
  * @author bruno
  */
-public class CriaBancoSQLite {
-
-    private final ConexaoSQLite conexaoSQLite;
-
-    public CriaBancoSQLite(ConexaoSQLite pConexaoSQLite) {
-        this.conexaoSQLite = pConexaoSQLite;
-    }
-
-    public void criarTabelaPessoa() {
-
-        String sql = "CREATE TABLE IF NOT EXISTS tbl_pessoa"
+public class CriaBancoSQLite {    
+    
+    
+    public synchronized void criarTabelaPessoa() throws ClassNotFoundException, SQLException {                
+        Connection c = null;
+        Statement stmt = null;
+        
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            
+            String query = "CREATE TABLE IF NOT EXISTS tbl_pessoa"
                 + "("
-                + "id integer PRIMARY KEY,"
-                + "nome text NOT NULL,"
-                + "idade integer"
-                + ");";
-
-        //executando o sql de criar tabelas
-        boolean conectou = false;
-
-        try {
-            conectou = this.conexaoSQLite.conectar();
-            
-            Statement stmt = this.conexaoSQLite.criarStatement();
-            
-            stmt.execute(sql);
+                + "ID INT PRIMARY KEY NOT NULL,"
+                + "NOME CHAR(100) NOT NULL,"
+                + "CELULAR CHAR(10) NULL"
+                + ")";
+                
+            stmt.executeUpdate(query);
+            stmt.close();
+            c.close();
             
             System.out.println("Tabela pessoa criada!");
-
-        } catch (SQLException e) {
-            //mensagem de erro na criação da tabela
-        } finally {
-            if(conectou){
-                this.conexaoSQLite.desconectar();
-            }
+            
+        }catch(SQLException e){
+            System.err.println(e.getClass().getName() + ": " + 
+            e.getMessage());
         }
-
     }
 
+    public synchronized void criarTabelaContato() throws ClassNotFoundException, SQLException {                
+        Connection c = null;
+        Statement stmt = null;
+        
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            
+            String query = "CREATE TABLE IF NOT EXISTS tbl_contato"
+                + "("
+                + "ID INT PRIMARY KEY NOT NULL,"
+                + "NOME CHAR(100) NOT NULL,"
+                + "CELULAR CHAR(10) NULL"
+                + ")";
+                
+            stmt.executeUpdate(query);
+            stmt.close();
+            c.close();
+            
+            System.out.println("Tabela contato criada!");
+            
+        }catch(SQLException e){
+            System.err.println(e.getClass().getName() + ": " + 
+            e.getMessage());
+        }
+    }
+
+    public synchronized void criarTabelaUsuario() throws ClassNotFoundException, SQLException {                
+        Connection c = null;
+        Statement stmt = null;
+        
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            
+            String query = "CREATE TABLE IF NOT EXISTS tbl_usuario"
+                + "("
+                + "ID INT PRIMARY KEY NOT NULL,"
+                + "NOME CHAR(100) NOT NULL,"
+                + "CELULAR CHAR(10) NULL,"
+                + "EMAIL CHAR(100) NOT NULL,"
+                + "SENHA CHAR(255) NOT NULL"
+                + ");";
+                
+            stmt.executeUpdate(query);
+            stmt.close();
+            c.close();
+            
+            System.out.println("Tabela usuario criada!");
+            
+        }catch(SQLException e){
+            System.err.println(e.getClass().getName() + ": " + 
+            e.getMessage());
+        }
+    }
 }

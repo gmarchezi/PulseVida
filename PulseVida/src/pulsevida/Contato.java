@@ -11,8 +11,8 @@ package pulsevida;
  */
 public class Contato extends Pessoa {
     
-    public Contato(String nome, String celular){
-        super(nome, celular);
+    public Contato(int id, String nome, String celular){
+        super(id, nome, celular);
     }
     
 }

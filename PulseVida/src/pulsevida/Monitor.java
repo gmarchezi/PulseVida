@@ -38,15 +38,15 @@ public class Monitor {
     
     public void simularFrequencia(){
         //Random freq = new Random();
-        Pessoa pessoa = new Pessoa("Joaomanel","27 99969999");
-        String nomeContato = "Higor";
-        int timer = 0;
-        FrequenciaCardiaca freq = new FrequenciaCardiaca();
-        while(timer < 500)
-        {
-            freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
-            this.monitoraFrequencia(freq.getFrequencia(),pessoa, nomeContato);
-            timer++;
-        }        
+        //Pessoa pessoa = new Pessoa(11, "Joaomanel","27 99969999");
+//        String nomeContato = "Higor";
+//        int timer = 0;
+//        FrequenciaCardiaca freq = new FrequenciaCardiaca();
+//        while(timer < 500)
+//        {
+//            freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
+//            this.monitoraFrequencia(freq.getFrequencia(),pessoa, nomeContato);
+//            timer++;
+//        }        
     }
 }

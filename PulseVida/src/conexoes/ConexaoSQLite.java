@@ -14,41 +14,39 @@ import java.sql.Statement;
  */
 public class ConexaoSQLite {
 
-    private final ConexaoSQLite conexaoSQLite;
-
-    public CriarBancoSQLite(conexaoSQLite pConexaoSQLite) {
-        this.conexaoSQLite = pConexaoSQLite;
-    }
-
-    public void criarTabelaPessoa() {
-
-        String sql = "CREATE TABLE IF NOT EXISTS tbl_pessoa"
-                + "("
-                + "id integer PRIMARY KEY,"
-                + "nome text NOT NULL,"
-                + "idade integer"
-                + ");";
-
-        //executando o sql de criar tabelas
-        boolean conectou = false;
-
-        try {
-            conectou = this.conexaoSQLite.conectar();
-            
-            Statement stmt = this.conexaoSQLite.criarStatement();
-            
-            stmt.execute(sql);
-            
-            System.out.println("Tabela pessoa criada!");
-
-        } catch (SQLException e) {
-            //mensagem de erro na criação da tabela
-        } finally {
-            if(conectou){
-                this.conexaoSQLite.desconectar();
-            }
-        }
-
-    }
-
+//    private final ConexaoSQLite conexaoSQLite;
+//
+//    public CriarBancoSQLite(conexaoSQLite pConexaoSQLite) {
+//        this.conexaoSQLite = pConexaoSQLite;
+//    }
+//
+//    public void criarTabelaPessoa() {
+//
+//        String sql = "CREATE TABLE IF NOT EXISTS tbl_pessoa"
+//                + "("
+//                + "id integer PRIMARY KEY,"
+//                + "nome text NOT NULL,"
+//                + "idade integer"
+//                + ");";
+//
+//        //executando o sql de criar tabelas
+//        boolean conectou = false;
+//
+//        try {
+//            conectou = this.conexaoSQLite.conectar();
+//            
+//            Statement stmt = this.conexaoSQLite.criarStatement();
+//            
+//            stmt.execute(sql);
+//            
+//            System.out.println("Tabela pessoa criada!");
+//
+//        } catch (SQLException e) {
+//            //mensagem de erro na criação da tabela
+//        } finally {
+//            if(conectou){
+//                this.conexaoSQLite.desconectar();
+//            }
+//        }
+//    }
 }
