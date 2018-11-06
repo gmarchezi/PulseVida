@@ -45,7 +45,8 @@ public class MonitorTest {
     public void testDisparanotificacao() {
         Monitor instance = new Monitor();
         instance.disparaNotificacao(150,"Gabriel", "Guiga","997483568");
+        assertEquals("Gabriel",notificacao.getNomeUsuario());
         //Verificar se foi criada a notificacao corretamente, n sei fazer isso kkkk
-        fail("Leia o comentário no teste!");
+        //fail("Leia o comentário no teste!");
     }
 }

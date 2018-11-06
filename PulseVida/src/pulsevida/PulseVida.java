@@ -22,6 +22,7 @@ public class PulseVida {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         CriaBancoSQLite criarBanco = new CriaBancoSQLite();
         
+        //Cria as seguintes tabelas, caso as mesmas não existam.
         criarBanco.criarTabelaPessoa();
         criarBanco.criarTabelaContato();
         criarBanco.criarTabelaUsuario();
