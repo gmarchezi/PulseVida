@@ -5,6 +5,8 @@
  */
 package pulsevida;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,9 +46,15 @@ public class MonitorTest {
     @Test
     public void testDisparanotificacao() {
         Monitor instance = new Monitor();
-        instance.disparaNotificacao(150,"Gabriel", "Guiga","997483568");
-        assertEquals("Gabriel",notificacao.getNomeUsuario());
-        //Verificar se foi criada a notificacao corretamente, n sei fazer isso kkkk
-        //fail("Leia o comentário no teste!");
+        boolean gerouNotificacao;
+        try {
+            gerouNotificacao = instance.disparaNotificacao(-9, "Gabriel", "Guiga", "997483568");
+        } catch (Exception ex) {
+            //ex.printStackTrace();
+            return;
+        }
+        
+        fail("Erro no teste.");
+        //assertEquals(true ,gerouNotificacao);
     }
 }

@@ -11,14 +11,12 @@ public class Notificacao {
     private String nomeContato;
     private String mensagem;
     private String dataHora;
-    private String localizacao;
     
-    public Notificacao(String nomeUsuario, String nomeContato, String mensagem, String dataHora, String localizacao){
+    public Notificacao(String nomeUsuario, String nomeContato, String mensagem, String dataHora){
         this.nomeUsuario = nomeUsuario;
         this.nomeContato = nomeContato;
         this.mensagem = mensagem;
         this.dataHora = dataHora;
-        this.localizacao = localizacao;
     }
 
     public String getNomeUsuario() {
@@ -52,13 +50,4 @@ public class Notificacao {
     public void setDataHora(String dataHora) {
         this.dataHora = dataHora;
     }
-
-    public String getLocalizacao() {
-        return localizacao;
-    }
-
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
-    }
-    
 }

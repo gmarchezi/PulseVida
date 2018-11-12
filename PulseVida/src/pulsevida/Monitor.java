@@ -7,6 +7,8 @@ package pulsevida;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,27 +20,46 @@ public class Monitor {
     public Monitor(){
     }
     
-    public boolean disparaNotificacao(int freq, String nomePessoa,String nomeContato, String celular){
+    public boolean disparaNotificacao(int freq, String nomePessoa,String nomeContato, String celular) throws Exception {
         //Exemplo de notificação que será enviada via sms e/ou e-mail
-        String mensagem = "O paciente " + nomePessoa + " registrou uma frequencia cardiaca de " + freq + " bpm.";
-        java.util.Date data = new Date();
-        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
-        // Localizacao deverah ser obtida no momento da geracao da notificacao, a localizacao a sequir eh exemplificada
-        String localizacao = "Rua Jair Messias Bolsonaro, numero 17, Bairro Mito";
-        Notificacao notificacao = new Notificacao(nomePessoa,nomeContato, mensagem, dataF, localizacao);
-        if(notificacao != null){
-            System.out.println("Atenção! Notificacão enviada pois o paciente " + nomePessoa + " registrou uma frequência de " + freq + "bpm.");
-            return true;
-        }else{
-            return false;
-        }
-        //JOptionPane.ShowMessageDialog(null, "Atenção! Notificacão enviada pois o paciente #xyz registrou uma frequência de " + freq + "bpm.");
         
+        if (freq < 0) {
+                throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
+            }
+        
+        String mensagem = "O paciente " + nomePessoa + " registrou uma frequencia cardiaca de " + freq + " bpm.";
+        
+        
+        
+        java.util.Date data = new Date();
+        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);        
+        try{
+            
+            
+            
+            
+            Notificacao notificacao = new Notificacao(nomePessoa,nomeContato, mensagem, dataF);
+            
+            System.out.println("Atenção! Notificacão enviada pois o paciente " + nomePessoa + " registrou uma frequência de " + freq + "bpm.");
+            
+            return true;
+        }
+        catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+            
+            return false;
+        }        
+        //JOptionPane.ShowMessageDialog(null, "Atenção! Notificacão enviada pois o paciente #xyz registrou uma frequência de " + freq + "bpm.");        
     }
     
     public void monitoraFrequencia(int freq, Pessoa pessoa,String nomeContato){        
         if ((freq < 60) || (freq > 100)){
-            this.disparaNotificacao(freq, pessoa.getNome(),nomeContato, pessoa.getCelular());
+            try {
+                this.disparaNotificacao(freq, pessoa.getNome(),nomeContato, pessoa.getCelular());
+            } catch (Exception ex) {
+                Logger.getLogger(Monitor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }    
     
