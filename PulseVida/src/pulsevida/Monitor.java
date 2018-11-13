@@ -9,7 +9,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,27 +19,20 @@ public class Monitor {
     public Monitor(){
     }
     
-    public boolean disparaNotificacao(int freq, String nomePessoa,String nomeContato, String celular) throws Exception {
+    public boolean disparaNotificacao(int frequencia, String nomeUsuario,String nomeContato, String celular) throws Exception {
+        if (frequencia < 0) {
+            throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
+        }
+        
         //Exemplo de notificação que será enviada via sms e/ou e-mail
-        
-        if (freq < 0) {
-                throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
-            }
-        
-        String mensagem = "O paciente " + nomePessoa + " registrou uma frequencia cardiaca de " + freq + " bpm.";
-        
-        
-        
+        String mensagem = "O paciente " + nomeUsuario + " registrou uma frequencia cardiaca de " + frequencia + " bpm.";
         java.util.Date data = new Date();
-        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);        
+        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+        
         try{
+            Notificacao notificacao = new Notificacao(nomeUsuario,nomeContato, mensagem, dataF);
             
-            
-            
-            
-            Notificacao notificacao = new Notificacao(nomePessoa,nomeContato, mensagem, dataF);
-            
-            System.out.println("Atenção! Notificacão enviada pois o paciente " + nomePessoa + " registrou uma frequência de " + freq + "bpm.");
+            System.out.println("Atenção! Notificacão enviada pois o paciente " + nomeUsuario + " registrou uma frequência de " + frequencia + "bpm.");
             
             return true;
         }
@@ -49,19 +41,24 @@ public class Monitor {
             System.err.println(e.getMessage());
             
             return false;
-        }        
-        //JOptionPane.ShowMessageDialog(null, "Atenção! Notificacão enviada pois o paciente #xyz registrou uma frequência de " + freq + "bpm.");        
+        }
     }
     
-    public void monitoraFrequencia(int freq, Pessoa pessoa,String nomeContato){        
-        if ((freq < 60) || (freq > 100)){
+    public void monitoraFrequencia(FrequenciaCardiaca frequenciaCardiaca, Usuario usuario,String nomeContato){        
+        if ((frequenciaCardiaca.getFrequencia() < 60) || (frequenciaCardiaca.getFrequencia() > 100)){
             try {
-                this.disparaNotificacao(freq, pessoa.getNome(),nomeContato, pessoa.getCelular());
+                this.disparaNotificacao(frequenciaCardiaca.getFrequencia(), usuario.getNome(),nomeContato, usuario.getCelular());
+                
+                
             } catch (Exception ex) {
                 Logger.getLogger(Monitor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }    
+    
+    public void adicionaHistorico(FrequenciaCardiaca frequenciaCardiaca, Usuario usuario){
+        usuario.getHistorico().add(frequenciaCardiaca); 
+    }
     
     public void simularFrequencia(){
         //Random freq = new Random();

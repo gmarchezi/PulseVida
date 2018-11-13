@@ -15,10 +15,19 @@ public class Usuario extends Pessoa {
     private String senha;
     private ArrayList<FrequenciaCardiaca> historico;
     
-    public Usuario(int id, String nome, String celular, String email, String senha){
-        //super(id, nome, celular);
+    public Usuario(int id, String nome, String celular, String email, String senha,ArrayList<FrequenciaCardiaca> historico){
+        super(id, nome, celular);
         this.email = email;
         this.senha = senha;
+        this.historico = historico;
+    }
+
+    public ArrayList<FrequenciaCardiaca> getHistorico() {
+        return historico;
+    }
+
+    public void setHistorico(ArrayList<FrequenciaCardiaca> historico) {
+        this.historico = historico;
     }
 
     public Usuario(){}
