@@ -31,16 +31,16 @@ O trabalho em questão possui o objetivo de desenvolver um sistema de monitorame
 
 ![Alt text](https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Wireframe%201.png?raw=true "Imagem")
 
-[### Project Model Canvas](https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.pdf)
+###[Project Model Canvas](https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.pdf)
 
-[### Protótipo (Mockup)](https://github.com/gmarchezi/PulseVida/blob/master/PrototipoPV.pdf)
+###[Protótipo (Mockup)](https://github.com/gmarchezi/PulseVida/blob/master/PrototipoPV.pdf)
 
-[### Trello](https://trello.com/b/fX00lfH3)
+###[Trello](https://trello.com/b/fX00lfH3)
 
-[### Diário de Bordo - Daily Log](https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing)
+###[Diário de Bordo - Daily Log](https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing)
 
-[### Documento de Requisitos](https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing)
+###[Documento de Requisitos](https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing)
 
-[### Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/Diagrama_PulseVida.png)
+###[Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/Diagrama_PulseVida.png)
 
-[### Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
+###[Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
