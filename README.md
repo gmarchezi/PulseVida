@@ -5,7 +5,7 @@ Trabalho desenvolvido na disciplina de Programação Orientada a Objetos I do cu
 Grupo POO: Guilherme Bodart, Higor Rebello, Gabriel Marchezi<br>
 Grupo Análise: Gabriel Marchezi, Higor Rebello, Vitor Zanoni e Felipe Santos.
 
-## Mini-Mundo:
+## Mini-Mundo
 
 Doenças cardiovasculares são a principal causa de morte em todo o planeta. 17,7 
 milhões de pessoas morreram por causa de doenças cardiovasculares em 2015, o que 
@@ -26,35 +26,21 @@ controle de medicação, o usuário irá definir os dias da semana e horário de
 seus medicamentos e assim terá um maior controle sobre o uso dos mesmos.<br>
 
 
-### Descrição do Projeto:
+### Descrição do Projeto
 O trabalho em questão possui o objetivo de desenvolver um sistema de monitoramento cardíaco de um usuário utilizando os conteúdos conceituais e técnicos abordados na disciplina. O sistema está sendo modelado para atender a necessidade de pessoas com doenças cardíacas e riscos de acidentes cardiovasculares de monitorarem sua frequência cardíaca e notificar as pessoas selecionadas caso algo esteja fora do normal. Utilizaremos a linguagem JAVA e a IDE NetBeans.<br>
 
 ![Alt text](https://github.com/gmarchezi/PulseiraPOO1/blob/master/New%20Wireframe%201.png?raw=true "Imagem")
 
-### Project Model Canvas:
+### [Project Model Canvas](https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.pdf)
 
-https://github.com/gmarchezi/PulseiraPOO1/blob/master/Project%20Canvas%20Online.pdf
+### [Protótipo (Mockup)](https://github.com/gmarchezi/PulseVida/blob/master/PrototipoPV.pdf)
 
-### Protótipo (Mockup): 
+### [Trello](https://trello.com/b/fX00lfH3)
 
-https://github.com/gmarchezi/PulseVida/blob/master/PrototipoPV.pdf
+### [Diário de Bordo - Daily Log](https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing)
 
-### Trello:
-https://trello.com/b/fX00lfH3
+### [Documento de Requisitos](https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing)
 
-### Diário de Bordo - Daily Log
+### [Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/Diagrama_PulseVida.png)
 
-https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing
-
-### Documento de Requisitos:
-
-https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing
-
-### Diagrama de Classes:
-
-https://github.com/gmarchezi/PulseVida/blob/master/Diagrama_PulseVida.png
-
-
-### Código do Projeto:
-
-https://github.com/gmarchezi/PulseVida/tree/master/PulseVida
+### [Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
