@@ -11,16 +11,22 @@ import java.util.ArrayList;
  * @author 
  */
 public class Usuario extends Pessoa {
-    private String email;
+    private String login;
     private String senha;
     private ArrayList<FrequenciaCardiaca> historico;
     
-    public Usuario(int id, String nome, String celular, String email, String senha,ArrayList<FrequenciaCardiaca> historico){
-        super(id, nome, celular);
-        this.email = email;
+    public Usuario(int id, String nome, String celular, String email, String login, String senha,ArrayList<FrequenciaCardiaca> historico){
+        super(id, nome, email, celular);
+        this.login = login;
         this.senha = senha;
         this.historico = historico;
     }
+    
+    public Usuario(String nome, String celular, String email) {
+        super(nome, celular, email);
+    }
+    
+    public Usuario(){}
 
     public ArrayList<FrequenciaCardiaca> getHistorico() {
         return historico;
@@ -29,15 +35,13 @@ public class Usuario extends Pessoa {
     public void setHistorico(ArrayList<FrequenciaCardiaca> historico) {
         this.historico = historico;
     }
-
-    public Usuario(){}
-
-    public String getEmail() {
-        return email;
+    
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getSenha() {

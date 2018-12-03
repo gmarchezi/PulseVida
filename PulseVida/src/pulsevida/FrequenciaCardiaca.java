@@ -14,6 +14,27 @@ package pulsevida;
 public class FrequenciaCardiaca {
     private int frequencia;
     private String data;
+    private String hora;
+    
+    public FrequenciaCardiaca() {
+        
+    }
+    
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
     
     
     public void atualizarFrequencia(int frequencia){

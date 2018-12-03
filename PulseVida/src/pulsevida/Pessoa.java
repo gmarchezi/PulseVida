@@ -11,15 +11,31 @@ package pulsevida;
  */
 public class Pessoa {
     private int id;
-    private String nome;    
+    private String nome;
+    private String email;
     private String celular;
     
     public Pessoa(){}
     
-    public Pessoa(int id, String nome, String celular){
+    public Pessoa(int id, String nome, String email, String celular){
         this.id = id;
         this.nome = nome;
+        this.email = email;
         this.celular = celular;
+    }
+    
+    public Pessoa(String nome, String celular, String email){
+        this.nome = nome;
+        this.celular = celular;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNome() {

@@ -7,10 +7,12 @@ package persistencia;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pulsevida.FrequenciaCardiaca;
 import pulsevida.Notificacao;
+import pulsevida.Pessoa;
 import pulsevida.Usuario;
 
 /**
@@ -22,6 +24,7 @@ public class Monitor {
     public Monitor(){
     }
     
+    //Metodo que faz o envio da 
     public boolean disparaNotificacao(int frequencia, String nomeUsuario,String nomeContato, String celular) throws Exception {
         if (frequencia < 0) {
             throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
@@ -47,12 +50,11 @@ public class Monitor {
         }
     }
     
+    //Avalia a frequencia cardiaca e envia a notificacao
     public void monitoraFrequencia(FrequenciaCardiaca frequenciaCardiaca, Usuario usuario,String nomeContato){        
         if ((frequenciaCardiaca.getFrequencia() < 60) || (frequenciaCardiaca.getFrequencia() > 100)){
             try {
-                this.disparaNotificacao(frequenciaCardiaca.getFrequencia(), usuario.getNome(),nomeContato, usuario.getCelular());
-                
-                
+                this.disparaNotificacao(frequenciaCardiaca.getFrequencia(), usuario.getNome(),nomeContato, usuario.getCelular());                
             } catch (Exception ex) {
                 Logger.getLogger(Monitor.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -63,17 +65,19 @@ public class Monitor {
         usuario.getHistorico().add(frequenciaCardiaca); 
     }
     
-    public void simularFrequencia(){
+    //Metodo para simulação do monitoramento
+    public void simularMonitoramento(){
         //Random freq = new Random();
-        //ePssoa pessoa = new Pessoa(11, "Joaomanel","27 99969999");
-//        String nomeContato = "Higor";
-//        int timer = 0;
-//        FrequenciaCardiaca freq = new FrequenciaCardiaca();
-//        while(timer < 500)
-//        {
-//            freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
-//            this.monitoraFrequencia(freq.getFrequencia(),pessoa, nomeContato);
-//            timer++;
-//        }        
+        Usuario usuario = new Usuario("Joaomanel","27 99969999", "teste@teste.com");
+        String nomeContato = "Higor";        
+        FrequenciaCardiaca freq = new FrequenciaCardiaca();
+        
+        int timer = 0;
+        while(timer < 500)
+        {
+            freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
+            this.monitoraFrequencia(freq, usuario, nomeContato);
+            timer++;
+        }        
     }
 }
