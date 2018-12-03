@@ -47,9 +47,8 @@ public class PulseVida {
             String email = JOptionPane.showInputDialog("E-mail:");
             String login = JOptionPane.showInputDialog("Login:");
             String senha = JOptionPane.showInputDialog("Senha:");
-            ArrayList<FrequenciaCardiaca> historico = new ArrayList<>();
             
-            Usuario novoUsuario = new Usuario(nome,celular,email,login,senha,historico);
+            Usuario novoUsuario = new Usuario(nome,celular,email,login,senha);
             persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
             
             _userDAO.Salvar(novoUsuario);
