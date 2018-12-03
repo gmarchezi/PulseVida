@@ -41,57 +41,30 @@ public class PulseVida {
         
         //Listar listar = new Listar();        
         if (opcaoEscolhida == 1) {            
-            
-            Usuario novoUsuario = new Usuario();
-            persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
-            Pessoa novaPessoa = new Pessoa();
-            persistencia.PessoaDAO _pessoaDAO = new persistencia.PessoaDAO();
-            
-            String id = JOptionPane.showInputDialog("ID");
+           
             String nome = JOptionPane.showInputDialog("Nome:");
             String celular = JOptionPane.showInputDialog("Celular:");
             String email = JOptionPane.showInputDialog("E-mail:");
             String login = JOptionPane.showInputDialog("Login:");
             String senha = JOptionPane.showInputDialog("Senha:");
-                        
-            novoUsuario.setId(Integer.parseInt(id));
-            novaPessoa.setId(novoUsuario.getId());
-            novoUsuario.setNome(nome);
-            novaPessoa.setNome(novoUsuario.getNome());
-            novoUsuario.setCelular(celular);
-            novaPessoa.setCelular(celular);
-            novoUsuario.setEmail(email);
-            novaPessoa.setEmail(email);
-            novoUsuario.setLogin(login);
-            novoUsuario.setSenha(senha);
+            ArrayList<FrequenciaCardiaca> historico = new ArrayList<>();
+            
+            Usuario novoUsuario = new Usuario(nome,celular,email,login,senha,historico);
+            persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
             
             _userDAO.Salvar(novoUsuario);
-            _pessoaDAO.Salvar(novaPessoa);
             
         } else if (opcaoEscolhida == 2) {
             
-            Contato novoContato = new Contato();
-            persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
-            Pessoa novaPessoa = new Pessoa();
-            persistencia.PessoaDAO _pessoaDAO = new persistencia.PessoaDAO();
-            
-            String id = JOptionPane.showInputDialog("ID");
+           
             String nome = JOptionPane.showInputDialog("Nome:");
             String celular = JOptionPane.showInputDialog("Celular:");
             String email = JOptionPane.showInputDialog("E-mail:");
-                        
-            novoContato.setId(Integer.parseInt(id));
-            novoContato.setNome(nome);
-            novoContato.setCelular(celular);
-            novoContato.setEmail(email);
             
-            novaPessoa.setId(novoContato.getId());
-            novaPessoa.setNome(nome);
-            novaPessoa.setEmail(email);
-            novaPessoa.setCelular(celular);
+            Contato novoContato = new Contato(nome,celular,email);
+            persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
             
             _cttDAO.Salvar(novoContato);
-            _pessoaDAO.Salvar(novaPessoa);
         }
         else if (opcaoEscolhida == 3) {
             
@@ -100,9 +73,6 @@ public class PulseVida {
             
             String login = JOptionPane.showInputDialog("Login:");
             String celular = JOptionPane.showInputDialog("Celular do contato:");
-            
-            cttUsuario.setLogin(login);
-            cttUsuario.setCelular(celular);
             
             _cttUserDAO.Salvar(cttUsuario);
         }
@@ -129,7 +99,6 @@ public class PulseVida {
         Iterator it = lista.iterator();
         while (it.hasNext()) {
             Usuario usuario = (Usuario) it.next();
-            System.out.println("ID: " + usuario.getId());
             System.out.println("Nome: " + usuario.getNome());
             System.out.println("E-mail: " + usuario.getEmail());
             System.out.println("Celular: " + usuario.getCelular());
@@ -143,7 +112,6 @@ public class PulseVida {
         Iterator it = lista.iterator();
         while (it.hasNext()) {
             Usuario usuario = (Usuario) it.next();
-            System.out.println("ID: " + usuario.getId());
             System.out.println("Nome: " + usuario.getNome());
             System.out.println("E-mail: " + usuario.getEmail());
             System.out.println("Celular: " + usuario.getCelular());

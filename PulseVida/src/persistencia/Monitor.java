@@ -6,6 +6,7 @@
 package persistencia;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 import java.util.logging.Level;
@@ -68,7 +69,8 @@ public class Monitor {
     //Metodo para simulação do monitoramento
     public void simularMonitoramento(){
         //Random freq = new Random();
-        Usuario usuario = new Usuario("Joaomanel","27 99969999", "teste@teste.com");
+        ArrayList<FrequenciaCardiaca> historico = new ArrayList<>();
+        Usuario usuario = new Usuario("Joaomanel","27 99969999", "teste@teste.com","joaomanel123","naoseiasenha",historico);
         String nomeContato = "Higor";        
         FrequenciaCardiaca freq = new FrequenciaCardiaca();
         

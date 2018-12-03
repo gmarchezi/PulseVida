@@ -40,8 +40,7 @@ public class FrequenciaCardiaca {
     public void atualizarFrequencia(int frequencia){
         this.frequencia = getFrequencia();
         setFrequencia(frequencia);
-    }
-    
+    }    
 
     public int getFrequencia() {
         return frequencia;

@@ -9,13 +9,13 @@ package pulsevida;
  *
  * @author 
  */
-public class Pessoa {
+public abstract class Pessoa {
     private int id;
     private String nome;
     private String email;
     private String celular;
-    
-    public Pessoa(){}
+
+    public Pessoa(){};
     
     public Pessoa(int id, String nome, String email, String celular){
         this.id = id;
