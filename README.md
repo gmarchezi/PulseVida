@@ -41,6 +41,6 @@ O trabalho em questão possui o objetivo de desenvolver um sistema de monitorame
 
 ### [Documento de Requisitos](https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing)
 
-### [Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/Diagrama_PulseVida.png)
+### [Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/diagrama_classe_final.png?raw=true)
 
 ### [Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
