@@ -39,7 +39,7 @@ O trabalho em questão possui o objetivo de desenvolver um sistema de monitorame
 
 ### [Diário de Bordo](https://docs.google.com/document/d/1S1ddIExU4Hc-axx8Ch8JA56SY4iaTZdEXbXFiaRo1ZU/edit?usp=sharing)
 
-### [Documento de Requisitos](https://docs.google.com/document/d/1Pey0hwPxLfAA8hgkiMEUUVoudKaBLpy_q73FMu9krFU/edit?usp=sharing)
+### [Documento de Requisitos](https://drive.google.com/open?id=1ZO8Rrlvdwg-qflk47jPKTi_kpTGTO-8I)
 
 ### [Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/diagrama_classe_final.png?raw=true)
 
