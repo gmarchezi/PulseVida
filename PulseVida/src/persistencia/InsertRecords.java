@@ -25,7 +25,7 @@ public class InsertRecords {
             c = DriverManager.getConnection("jdbc:sqlite:pulseVida.db");
             
             System.out.println("Base de dados aberta.");
-            String sql = "INSERT INTO USUARIO (CPF, NOME, CELULAR, EMAIL, SENHA)"
+            String sql = "INSERT INTO USUARIO (NOME, CELULAR, EMAIL, SENHA)"
                             + "VALUES ("+ usuario.getNome() + "','"
                             + usuario.getCelular() + "','"
                             + usuario.getEmail() + "','"

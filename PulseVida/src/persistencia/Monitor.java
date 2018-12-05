@@ -69,8 +69,7 @@ public class Monitor {
     //Metodo para simulação do monitoramento
     public void simularMonitoramento(){
         //Random freq = new Random();
-        ArrayList<FrequenciaCardiaca> historico = new ArrayList<>();
-        Usuario usuario = new Usuario("Joaomanel","27 99969999", "teste@teste.com","joaomanel123","naoseiasenha",historico);
+        Usuario usuario = new Usuario(123,"Joaomanel","27 99969999", "teste@teste.com","joaomanel123","naoseiasenha");
         String nomeContato = "Higor";        
         FrequenciaCardiaca freq = new FrequenciaCardiaca();
         

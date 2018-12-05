@@ -5,6 +5,7 @@
  */
 package pulsevida;
 
+import conexoes.CriaBancoSQLite;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -25,7 +26,6 @@ public class PulseVida {
         CriaBancoSQLite criarBanco = new CriaBancoSQLite();
         
         //Cria as seguintes tabelas, caso as mesmas não existam.
-        criarBanco.criarTabelaPessoa();
         criarBanco.criarTabelaContato();
         criarBanco.criarTabelaUsuario();
         criarBanco.criarTabelaCttUsuario();
@@ -39,57 +39,60 @@ public class PulseVida {
                 + "\n(6)Simular monitoramento\n");
         int opcaoEscolhida = Integer.parseInt(opcao);
         
-        //Listar listar = new Listar();        
-        if (opcaoEscolhida == 1) {            
-           
-            String nome = JOptionPane.showInputDialog("Nome:");
-            String celular = JOptionPane.showInputDialog("Celular:");
-            String email = JOptionPane.showInputDialog("E-mail:");
-            String login = JOptionPane.showInputDialog("Login:");
-            String senha = JOptionPane.showInputDialog("Senha:");
-            
-            Usuario novoUsuario = new Usuario(nome,celular,email,login,senha);
-            persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
-            
-            _userDAO.Salvar(novoUsuario);
-            
-        } else if (opcaoEscolhida == 2) {
-            
-           
-            String nome = JOptionPane.showInputDialog("Nome:");
-            String celular = JOptionPane.showInputDialog("Celular:");
-            String email = JOptionPane.showInputDialog("E-mail:");
-            
-            Contato novoContato = new Contato(nome,celular,email);
-            persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
-            
-            _cttDAO.Salvar(novoContato);
-        }
-        else if (opcaoEscolhida == 3) {
-            
-            CttUsuario cttUsuario = new CttUsuario();
-            persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
-            
-            String login = JOptionPane.showInputDialog("Login:");
-            String celular = JOptionPane.showInputDialog("Celular do contato:");
-            
-            _cttUserDAO.Salvar(cttUsuario);
-        }
-        else if (opcaoEscolhida == 4){
-            
-            persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
-            ArrayList list = _userDAO.selectTable();
-            listaUsuarios(list);
-        }
-        else if (opcaoEscolhida == 5){
-            
-            persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
-            ArrayList list = _cttDAO.selectTable();
-            listaContatos(list);
-        }
-        else if (opcaoEscolhida == 6){
-            persistencia.Monitor _monitor = new persistencia.Monitor();
-            _monitor.simularMonitoramento();
+        //Listar listar = new Listar();
+        switch (opcaoEscolhida) {
+            case 1:
+                {
+                    int id = Integer.parseInt(JOptionPane.showInputDialog("Id:"));
+                    String nome = JOptionPane.showInputDialog("Nome:");
+                    String celular = JOptionPane.showInputDialog("Celular:");
+                    String email = JOptionPane.showInputDialog("E-mail:");
+                    String login = JOptionPane.showInputDialog("Login:");
+                    String senha = JOptionPane.showInputDialog("Senha:");
+                    Usuario novoUsuario = new Usuario(id,nome,celular,email,login,senha);
+                    persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
+                    _userDAO.Salvar(novoUsuario);
+                    break;
+                }
+            case 2:
+                {
+                    String nome = JOptionPane.showInputDialog("Nome:");
+                    String celular = JOptionPane.showInputDialog("Celular:");
+                    String email = JOptionPane.showInputDialog("E-mail:");
+                    Contato novoContato = new Contato(nome,celular,email);
+                    persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
+                    _cttDAO.Salvar(novoContato);
+                    break;
+                }
+            case 3:
+                {
+                    CttUsuario cttUsuario = new CttUsuario();
+                    persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
+                    String login = JOptionPane.showInputDialog("Login:");
+                    String celular = JOptionPane.showInputDialog("Celular do contato:");
+                    _cttUserDAO.Salvar(cttUsuario);
+                    break;
+                }
+            case 4:
+                {
+                    persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
+                    ArrayList list = _userDAO.selectTable();
+                    listaUsuarios(list);
+                    break;
+                }
+            case 5:
+                {
+                    persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
+                    ArrayList list = _cttDAO.selectTable();
+                    listaContatos(list);
+                    break;
+                }
+            case 6:
+                persistencia.Monitor _monitor = new persistencia.Monitor();
+                _monitor.simularMonitoramento();
+                break;
+            default:
+                break;
         }
     }
     
@@ -110,11 +113,10 @@ public class PulseVida {
     public static void listaContatos(ArrayList lista) {
         Iterator it = lista.iterator();
         while (it.hasNext()) {
-            Usuario usuario = (Usuario) it.next();
-            System.out.println("Nome: " + usuario.getNome());
-            System.out.println("E-mail: " + usuario.getEmail());
-            System.out.println("Celular: " + usuario.getCelular());
-            System.out.println("Login: " + usuario.getLogin());
+            Contato contato = (Contato) it.next();
+            System.out.println("Nome: " + contato.getNome());
+            System.out.println("E-mail: " + contato.getEmail());
+            System.out.println("Celular: " + contato.getCelular());
             System.out.println();
         }
     }
