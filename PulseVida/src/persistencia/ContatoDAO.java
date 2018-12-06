@@ -28,9 +28,10 @@ public class ContatoDAO {
             System.out.println("Base conectada.");                      
             stmt = c.createStatement();
             
-            String query = "INSERT INTO tbl_contato (ID,NOME,CELULAR) "
+            String query = "INSERT INTO tbl_contato (ID,NOME,EMAIL,CELULAR) "
                     + "VALUES (" + novoContato.getId() + ",'" + 
                     novoContato.getNome()+ "','" +
+                    novoContato.getEmail()+ "','" +
                     novoContato.getCelular()+ "');";
             
             stmt.executeUpdate(query);

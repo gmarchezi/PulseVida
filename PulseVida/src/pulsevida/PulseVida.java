@@ -56,20 +56,21 @@ public class PulseVida {
                 }
             case 2:
                 {
+                    int id = Integer.parseInt(JOptionPane.showInputDialog("Id:"));
                     String nome = JOptionPane.showInputDialog("Nome:");
                     String celular = JOptionPane.showInputDialog("Celular:");
                     String email = JOptionPane.showInputDialog("E-mail:");
-                    Contato novoContato = new Contato(nome,celular,email);
+                    Contato novoContato = new Contato(id,nome,celular,email);
                     persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
                     _cttDAO.Salvar(novoContato);
                     break;
                 }
             case 3:
                 {
-                    CttUsuario cttUsuario = new CttUsuario();
-                    persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
                     String login = JOptionPane.showInputDialog("Login:");
                     String celular = JOptionPane.showInputDialog("Celular do contato:");
+                    CttUsuario cttUsuario = new CttUsuario(login,celular);
+                    persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
                     _cttUserDAO.Salvar(cttUsuario);
                     break;
                 }

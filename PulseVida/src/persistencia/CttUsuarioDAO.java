@@ -26,7 +26,7 @@ public class CttUsuarioDAO {
             System.out.println("Base conectada.");                      
             stmt = c.createStatement();
             
-            String query = "INSERT INTO tbl_ctt_usuario (LOGIN,CELULAR) "
+            String query = "INSERT INTO tbl_ctt_usuario (LOGIN_USU,CELULAR_CTT) "
                     + "VALUES (" + novoCttusuario.getLogin() + ",'" +
                     novoCttusuario.getCelular()+ "');";
             
