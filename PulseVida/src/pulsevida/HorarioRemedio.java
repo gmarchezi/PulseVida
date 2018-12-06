@@ -23,8 +23,8 @@ public class HorarioRemedio {
 
     }
 
-    public void notificaRemedio(String horario, String nomeRemedio, float dose){
-        System.out.println("São " + horario + " horas, você deve tomar o remédio " + nomeRemedio + " de " + dose + " mg!" );
+    public void notificaRemedio(HorarioRemedio remedio){
+        System.out.println("São " + remedio.horario + " horas, você deve tomar o remédio " + remedio.nomeRemedio + " de " + remedio.dose + " mg!" );
     }
 
     public String getNomeRemedio() {

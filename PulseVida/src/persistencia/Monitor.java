@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pulsevida.FrequenciaCardiaca;
+import pulsevida.HorarioRemedio;
 import pulsevida.Notificacao;
 import pulsevida.Usuario;
 
@@ -67,6 +68,7 @@ public class Monitor {
         Usuario usuario = new Usuario(123,"Joaomanel","27 99969999", "teste@teste.com","joaomanel123","naoseiasenha");
         String nomeContato = "Higor";        
         FrequenciaCardiaca freq = new FrequenciaCardiaca();
+        HorarioRemedio horario = new HorarioRemedio("Metaprolol",50,"quarta/quinta","13:00");
         
         int timer = 0;
         while(timer < 30)
@@ -74,6 +76,9 @@ public class Monitor {
             freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
             this.monitoraFrequencia(freq, usuario, nomeContato);
             timer++;
-        }        
+        }
+        
+        horario.notificaRemedio(horario);
+        
     }
 }
