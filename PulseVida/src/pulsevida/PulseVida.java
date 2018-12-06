@@ -23,12 +23,15 @@ public class PulseVida {
      * @throws java.sql.SQLException
      */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        CriaBancoSQLite criarBanco = new CriaBancoSQLite();
+        CriaBancoSQLite _criarBanco = new CriaBancoSQLite();        
+        persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
+        persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
+        persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
         
         //Cria as seguintes tabelas, caso as mesmas não existam.
-        criarBanco.criarTabelaContato();
-        criarBanco.criarTabelaUsuario();
-        criarBanco.criarTabelaCttUsuario();
+        _criarBanco.criarTabelaContato();
+        _criarBanco.criarTabelaUsuario();
+        _criarBanco.criarTabelaCttUsuario();
         
         String opcao = JOptionPane.showInputDialog("Escolha a opção"
                 + "\n(1)Cadastrar Usuario"
@@ -36,62 +39,75 @@ public class PulseVida {
                 + "\n(3)Cadastra contato do Usuario"
                 + "\n(4)Listar Usuarios Cadastrados"
                 + "\n(5)Listar Contatos Cadastrados"
-                + "\n(6)Simular monitoramento\n");
+                + "\n(6)Deletar Contato"
+                + "\n(7)Deletar Usuario"
+                + "\n(8)Simular monitoramento\n");
         int opcaoEscolhida = Integer.parseInt(opcao);
         
         //Listar listar = new Listar();
         switch (opcaoEscolhida) {
             case 1:
                 {
-                    int id = Integer.parseInt(JOptionPane.showInputDialog("Id:"));
+                    int id = (_userDAO.ultimoID() + 1);
                     String nome = JOptionPane.showInputDialog("Nome:");
                     String celular = JOptionPane.showInputDialog("Celular:");
                     String email = JOptionPane.showInputDialog("E-mail:");
                     String login = JOptionPane.showInputDialog("Login:");
                     String senha = JOptionPane.showInputDialog("Senha:");
-                    Usuario novoUsuario = new Usuario(id,nome,celular,email,login,senha);
-                    persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
+                    Usuario novoUsuario = new Usuario(id,nome,celular,email,login,senha);                    
                     _userDAO.Salvar(novoUsuario);
                     break;
                 }
             case 2:
                 {
-                    int id = Integer.parseInt(JOptionPane.showInputDialog("Id:"));
+                    
+                    
+                    int id = (_cttDAO.ultimoID() + 1);
                     String nome = JOptionPane.showInputDialog("Nome:");
                     String celular = JOptionPane.showInputDialog("Celular:");
                     String email = JOptionPane.showInputDialog("E-mail:");
-                    Contato novoContato = new Contato(id,nome,celular,email);
-                    persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
+                    Contato novoContato = new Contato(id,nome,email,celular);                    
                     _cttDAO.Salvar(novoContato);
                     break;
                 }
             case 3:
                 {
-                    String login = JOptionPane.showInputDialog("Login:");
+                    String login = JOptionPane.showInputDialog("Login do usuario':");
                     String celular = JOptionPane.showInputDialog("Celular do contato:");
-                    CttUsuario cttUsuario = new CttUsuario(login,celular);
-                    persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
+                    CttUsuario cttUsuario = new CttUsuario(login,celular);                    
                     _cttUserDAO.Salvar(cttUsuario);
                     break;
                 }
             case 4:
-                {
-                    persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
+                {                    
                     ArrayList list = _userDAO.selectTable();
                     listaUsuarios(list);
                     break;
                 }
             case 5:
-                {
-                    persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
+                {                    
                     ArrayList list = _cttDAO.selectTable();
                     listaContatos(list);
                     break;
                 }
             case 6:
-                persistencia.Monitor _monitor = new persistencia.Monitor();
-                _monitor.simularMonitoramento();
-                break;
+                {
+                    String id = JOptionPane.showInputDialog("ID do contato:");
+                    _cttDAO.deleteRecord(Integer.parseInt(id));
+                    break;
+                }
+            case 7:
+                {
+                    String id = JOptionPane.showInputDialog("ID do usuario:");
+                    _userDAO.deleteRecord(Integer.parseInt(id));
+                    break;
+                }
+            case 8:
+                {
+                    persistencia.Monitor _monitor = new persistencia.Monitor();
+                    _monitor.simularMonitoramento();
+                    break;
+                }
             default:
                 break;
         }

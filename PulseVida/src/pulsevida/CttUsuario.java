@@ -35,6 +35,4 @@ public class CttUsuario {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
 }

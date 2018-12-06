@@ -76,4 +76,45 @@ public class UsuarioDAO {
         
         return listUsuarios;
     }
+    
+    public void deleteRecord(int id) {
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");            
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            String sql = "DELETE from tbl_usuario where ID=" + id +";";
+            stmt.executeUpdate(sql);            
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + 
+                    e.getMessage());            
+        }
+        System.out.println("Deletado com sucesso.");
+    }
+    
+    public int ultimoID () {
+        Connection c = null;
+        Statement stmt = null;
+        int id = 0;
+        
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT MAX(id) FROM tbl_usuario");            
+            id = ((Number) rs.getObject(1)).intValue();
+            rs.close();
+            stmt.close();
+            c.close();
+        } 
+        catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+        return id;
+    }
 }
