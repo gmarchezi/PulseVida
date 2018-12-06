@@ -16,10 +16,6 @@ public class FrequenciaCardiaca {
     private String data;
     private String hora;
     
-    public FrequenciaCardiaca() {
-        
-    }
-    
     public String getData() {
         return data;
     }

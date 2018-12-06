@@ -16,7 +16,7 @@ import java.sql.Statement;
  */
 public class PessoaDAO {
     
-    public void Salvar(pulsevida.Pessoa novaPessoa) throws ClassNotFoundException, SQLException{
+    public void salvar(pulsevida.Pessoa novaPessoa) throws ClassNotFoundException, SQLException{
         Connection c = null;
         Statement stmt = null;
         

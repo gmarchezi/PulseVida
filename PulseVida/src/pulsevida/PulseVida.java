@@ -27,6 +27,7 @@ public class PulseVida {
         persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
         persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
         persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
+        //persistencia.HorarioRemedioDAO _horarioDAO = new persistencia.HorarioRemedioDAO();
         
         //Cria as seguintes tabelas, caso as mesmas não existam.
         _criarBanco.criarTabelaContato();
@@ -50,12 +51,17 @@ public class PulseVida {
                 {
                     int id = (_userDAO.ultimoID() + 1);
                     String nome = JOptionPane.showInputDialog("Nome:");
+                    nome = validaString(nome,"Nome");
                     String celular = JOptionPane.showInputDialog("Celular:");
+                    celular = validaString(celular,"Celular");
                     String email = JOptionPane.showInputDialog("E-mail:");
+                    email = validaString(email,"E-mail");
                     String login = JOptionPane.showInputDialog("Login:");
+                    login = validaString(login,"Login");
                     String senha = JOptionPane.showInputDialog("Senha:");
+                    senha = validaString(senha,"Senha");
                     Usuario novoUsuario = new Usuario(id,nome,celular,email,login,senha);                    
-                    _userDAO.Salvar(novoUsuario);
+                    _userDAO.salvar(novoUsuario);
                     break;
                 }
             case 2:
@@ -67,7 +73,7 @@ public class PulseVida {
                     String celular = JOptionPane.showInputDialog("Celular:");
                     String email = JOptionPane.showInputDialog("E-mail:");
                     Contato novoContato = new Contato(id,nome,email,celular);                    
-                    _cttDAO.Salvar(novoContato);
+                    _cttDAO.salvar(novoContato);
                     break;
                 }
             case 3:
@@ -75,7 +81,7 @@ public class PulseVida {
                     String login = JOptionPane.showInputDialog("Login do usuario':");
                     String celular = JOptionPane.showInputDialog("Celular do contato:");
                     CttUsuario cttUsuario = new CttUsuario(login,celular);                    
-                    _cttUserDAO.Salvar(cttUsuario);
+                    _cttUserDAO.salvar(cttUsuario);
                     break;
                 }
             case 4:
@@ -108,6 +114,7 @@ public class PulseVida {
                     _monitor.simularMonitoramento();
                     break;
                 }
+           
             default:
                 break;
         }
@@ -136,5 +143,14 @@ public class PulseVida {
             System.out.println("Celular: " + contato.getCelular());
             System.out.println();
         }
+    }
+    
+    
+    public static String validaString(String nome, String tipo){
+        while(nome.isEmpty()){
+            nome = JOptionPane.showInputDialog("Digite o " + tipo + ":");        
+        }
+        
+        return nome;    
     }
 }

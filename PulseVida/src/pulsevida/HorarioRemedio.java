@@ -13,7 +13,7 @@ public class HorarioRemedio {
     private String nomeRemedio;
     private float dose;
     private String diaSemana;
-    String horario;
+    private String horario;
     
     public HorarioRemedio(String nomeRemedio, float dose, String diaSemana, String horario){
         this.nomeRemedio = nomeRemedio;

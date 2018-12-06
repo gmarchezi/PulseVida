@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class ContatoDAO {
     
-    public void Salvar(pulsevida.Contato novoContato) throws ClassNotFoundException, SQLException{
+    public void salvar(pulsevida.Contato novoContato) throws ClassNotFoundException, SQLException{
         Connection c = null;
         Statement stmt = null;
         

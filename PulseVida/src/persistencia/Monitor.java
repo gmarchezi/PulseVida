@@ -6,14 +6,11 @@
 package persistencia;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pulsevida.FrequenciaCardiaca;
 import pulsevida.Notificacao;
-import pulsevida.Pessoa;
 import pulsevida.Usuario;
 
 /**
@@ -22,13 +19,11 @@ import pulsevida.Usuario;
  */
 public class Monitor {
     
-    public Monitor(){
-    }
-    
     //Metodo que faz o envio da 
     public boolean disparaNotificacao(int frequencia, String nomeUsuario,String nomeContato, String celular) throws Exception {
-        if (frequencia < 0) {
-            throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
+        if (frequencia < 0 || frequencia>200) {
+            System.out.println("Frequencia invalida. Verificar sensor de frequencia.");
+            return false;
         }
         
         //Exemplo de notificação que será enviada via sms e/ou e-mail
@@ -74,7 +69,7 @@ public class Monitor {
         FrequenciaCardiaca freq = new FrequenciaCardiaca();
         
         int timer = 0;
-        while(timer < 500)
+        while(timer < 30)
         {
             freq.atualizarFrequencia(45 + (int)(Math.random() * (120 - 50)));
             this.monitoraFrequencia(freq, usuario, nomeContato);

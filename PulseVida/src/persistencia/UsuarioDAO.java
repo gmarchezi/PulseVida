@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class UsuarioDAO {
     
-    public void Salvar(pulsevida.Usuario novoUsuario) throws ClassNotFoundException, SQLException{
+    public void salvar(pulsevida.Usuario novoUsuario) throws ClassNotFoundException, SQLException{
         Connection c = null;
         Statement stmt = null;
         

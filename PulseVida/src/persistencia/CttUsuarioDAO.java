@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class CttUsuarioDAO {
     
-    public void Salvar(pulsevida.CttUsuario novoCttusuario) throws ClassNotFoundException, SQLException{
+    public void salvar(pulsevida.CttUsuario novoCttusuario) throws ClassNotFoundException, SQLException{
         Connection c = null;
         Statement stmt = null;
         
