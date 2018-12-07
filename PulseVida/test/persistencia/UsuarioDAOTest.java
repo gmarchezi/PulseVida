@@ -43,6 +43,7 @@ public class UsuarioDAOTest {
         assertEquals(rs.getString("NOME"), usr.getNome());
         assertEquals(rs.getString("EMAIL"), usr.getEmail());
         assertEquals(rs.getString("LOGIN"), usr.getLogin());
+        rs.close();
     }
     
     public void salvarTeste(pulsevida.Usuario novoUsuario) throws ClassNotFoundException, SQLException{
