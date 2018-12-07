@@ -43,3 +43,5 @@ O trabalho em questão possui o objetivo de desenvolver um sistema de monitorame
 ### [Diagrama de Classes](https://github.com/gmarchezi/PulseVida/blob/master/diagrama_classe_final.png?raw=true)
 
 ### [Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
+
+### [CODACY](https://app.codacy.com/project/Guilherme-Bodart/PulseVida/dashboard)
