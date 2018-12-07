@@ -109,32 +109,4 @@ public class CriaBancoSQLite {
             e.getMessage());
         }
     }
-    
-    /*public synchronized void criarTabelaCttUsuario() throws ClassNotFoundException, SQLException {                
-        Connection c = null;
-        Statement stmt = null;
-        
-        try{
-            Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
-            System.out.println("Base conectada.");
-            stmt = c.createStatement();
-            
-            String query = "CREATE TABLE IF NOT EXISTS tbl_ctt_usuario"
-                + "("
-                + "LOGIN_USU CHAR(100) NOT NULL,"
-                + "CELULAR_CTT CHAR(10) NOT NULL"
-                + ");";
-                
-            stmt.executeUpdate(query);
-            stmt.close();
-            c.close();
-            
-            System.out.println("Tabela Contato>Usuario criada!");
-            
-        }catch(SQLException e){
-            System.err.println(e.getClass().getName() + ": " + 
-            e.getMessage());
-        }
-    }*/
 }

@@ -6,6 +6,7 @@
 package persistencia;
 
 import java.text.DateFormat;
+import static java.text.DateFormat.getDateInstance;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,8 +29,8 @@ public class Monitor {
         
         //Exemplo de notificação que será enviada via sms e/ou e-mail
         String mensagem = "O paciente " + nomeUsuario + " registrou uma frequencia cardiaca de " + frequencia + " bpm.";
-        java.util.Date data = new Date();
-        String dataF = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+        Date data = new Date();
+        String dataF = getDateInstance(DateFormat.MEDIUM).format(data);
         
         try{
             Notificacao notificacao = new Notificacao(nomeUsuario,nomeContato, mensagem, dataF);

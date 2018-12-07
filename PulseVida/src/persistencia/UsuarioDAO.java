@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import pulsevida.Usuario;
 
 /**
  *
@@ -38,7 +40,6 @@ public class UsuarioDAO {
             
             stmt.executeUpdate(query);
             stmt.close();
-            //c.commit();
             c.close();
         }catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());            
@@ -72,9 +73,47 @@ public class UsuarioDAO {
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());            
         }
-        System.out.println("Operation done successfully");
+        System.out.println("Lista recuperada com sucesso.");
         
         return listUsuarios;
+    }
+    
+    public synchronized Usuario recuperarPorLogin(String login){
+        Usuario usuario = new Usuario();        
+        Connection c = null;
+        Statement stmt = null;
+        
+        try{
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
+            System.out.println("Base conectada.");
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM tbl_usuario WHERE LOGIN = '" + login + "'");
+            if (rs != null) {
+                usuario.setId(rs.getInt("ID"));
+                usuario.setNome(rs.getString("NOME"));
+                usuario.setEmail(rs.getString("EMAIL"));
+                usuario.setCelular(rs.getString("CELULAR"));
+                usuario.setLogin(rs.getString("LOGIN"));
+                usuario.setSenha(rs.getString("SENHA"));
+                
+                rs.close();
+                stmt.close();
+                c.close();
+            }
+            else{
+                rs.close();
+                stmt.close();
+                c.close();
+                
+                JOptionPane.showInputDialog("Usuário não encontrado!");
+            }
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        System.out.println("Usuario recuperado com sucesso.");
+        
+        return usuario;
     }
     
     public void deleteRecord(int id) {
@@ -106,9 +145,13 @@ public class UsuarioDAO {
             c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
             System.out.println("Base conectada.");
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT MAX(id) FROM tbl_usuario");            
-            id = ((Number) rs.getObject(1)).intValue();
-            rs.close();
+            try (ResultSet rs = stmt.executeQuery("SELECT MAX(id) FROM tbl_usuario")) {
+                if (rs == null) {
+                    id = 1;
+                }
+                else
+                    id = ((Number) rs.getObject(1)).intValue();
+            }            
             stmt.close();
             c.close();
         } 
