@@ -52,6 +52,8 @@ public class CriaBancoSQLiteTest {
             System.err.println(e.getClass().getName() + ": " + 
             e.getMessage());
         }
+        
+        
     }
     
     

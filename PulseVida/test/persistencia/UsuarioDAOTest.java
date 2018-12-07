@@ -25,10 +25,10 @@ public class UsuarioDAOTest {
     }
 
     @Test
-    public void salvar() throws ClassNotFoundException, SQLException {
+    public void criacaoUsuarioTeste() throws ClassNotFoundException, SQLException {
         Usuario usr = new Usuario(999,"Testador","27123456789","testador@hotmail.com","testador34","testando123");
         UsuarioDAOTest usrDAO = new UsuarioDAOTest();
-        salvar(usr);
+        salvarTeste(usr);
         
         Connection c = null;
         Statement stmt = null;       
@@ -43,9 +43,10 @@ public class UsuarioDAOTest {
         assertEquals(rs.getString("NOME"), usr.getNome());
         assertEquals(rs.getString("EMAIL"), usr.getEmail());
         assertEquals(rs.getString("LOGIN"), usr.getLogin());
+        rs.close();
     }
     
-    public void salvar(pulsevida.Usuario novoUsuario) throws ClassNotFoundException, SQLException{
+    public void salvarTeste(pulsevida.Usuario novoUsuario) throws ClassNotFoundException, SQLException{
         Connection c = null;
         Statement stmt = null;
         
