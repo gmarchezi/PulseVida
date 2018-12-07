@@ -44,4 +44,4 @@ O trabalho em questão possui o objetivo de desenvolver um sistema de monitorame
 
 ### [Código do Projeto](https://github.com/gmarchezi/PulseVida/tree/master/PulseVida)
 
-### [CODACY](https://app.codacy.com/project/Guilherme-Bodart/PulseVida/dashboard)
+### [Codacy](https://app.codacy.com/project/Guilherme-Bodart/PulseVida/dashboard)
