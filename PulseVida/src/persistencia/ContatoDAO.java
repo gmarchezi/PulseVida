@@ -103,9 +103,13 @@ public class ContatoDAO {
             c = DriverManager.getConnection("jdbc:sqlite:pulseVidaDB.db");
             System.out.println("Base conectada.");
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT MAX(id) FROM tbl_contato");            
-            id = ((Number) rs.getObject(1)).intValue();
-            rs.close();
+            try (ResultSet rs = stmt.executeQuery("SELECT MAX(id) FROM tbl_contato")) {
+                if (rs == null) {
+                    id = 1;
+                }
+                else
+                    id = ((Number) rs.getObject(1)).intValue();
+            }
             stmt.close();
             c.close();
         } 
