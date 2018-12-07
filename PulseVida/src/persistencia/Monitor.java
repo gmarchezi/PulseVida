@@ -23,8 +23,7 @@ public class Monitor {
     //Metodo que faz o envio da 
     public boolean disparaNotificacao(int frequencia, String nomeUsuario,String nomeContato, String celular) throws Exception {
         if (frequencia < 0 || frequencia>200) {
-            System.out.println("Frequencia invalida. Verificar sensor de frequencia.");
-            return false;
+            throw new Exception("Frequencia invalida. Verificar sensor de frequencia.");
         }
         
         //Exemplo de notificação que será enviada via sms e/ou e-mail
