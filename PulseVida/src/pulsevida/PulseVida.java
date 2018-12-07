@@ -32,7 +32,6 @@ public class PulseVida {
         //Cria as seguintes tabelas, caso as mesmas não existam.
         _criarBanco.criarTabelaContato();
         _criarBanco.criarTabelaUsuario();
-        _criarBanco.criarTabelaCttUsuario();
         
         String opcao = JOptionPane.showInputDialog("Escolha a opção"
                 + "\n(1)Cadastrar Usuario"
@@ -66,13 +65,13 @@ public class PulseVida {
                 }
             case 2:
                 {
-                    
-                    
                     int id = (_cttDAO.ultimoID() + 1);
+                    String idUsuario = JOptionPane.showInputDialog("ID Usuario:");
+                    int id_usuario = Integer.parseInt(idUsuario);
                     String nome = JOptionPane.showInputDialog("Nome:");
                     String celular = JOptionPane.showInputDialog("Celular:");
                     String email = JOptionPane.showInputDialog("E-mail:");
-                    Contato novoContato = new Contato(id,nome,email,celular);                    
+                    Contato novoContato = new Contato(id,id_usuario,nome,email,celular);                    
                     _cttDAO.salvar(novoContato);
                     break;
                 }

@@ -60,6 +60,7 @@ public class CriaBancoSQLite {
             String query = "CREATE TABLE IF NOT EXISTS tbl_contato"
                 + "("
                 + "ID INT PRIMARY KEY NOT NULL,"
+                + "ID_USUARIO INT NOT NULL,"
                 + "NOME CHAR(100) NOT NULL,"
                 + "EMAIL CHAR(100) NOT NULL,"
                 + "CELULAR CHAR(10) NULL"
@@ -109,7 +110,7 @@ public class CriaBancoSQLite {
         }
     }
     
-    public synchronized void criarTabelaCttUsuario() throws ClassNotFoundException, SQLException {                
+    /*public synchronized void criarTabelaCttUsuario() throws ClassNotFoundException, SQLException {                
         Connection c = null;
         Statement stmt = null;
         
@@ -135,5 +136,5 @@ public class CriaBancoSQLite {
             System.err.println(e.getClass().getName() + ": " + 
             e.getMessage());
         }
-    }
+    }*/
 }

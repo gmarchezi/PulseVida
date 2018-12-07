@@ -10,9 +10,19 @@ package pulsevida;
  * @author
  */
 public class Contato extends Pessoa {
+    int id_usuario;
     
-    public Contato(int id, String nome, String email, String celular){
+    public Contato(int id, int id_usuario, String nome, String email, String celular){
         super(id, nome, email, celular);
+        this.id_usuario = id_usuario;
     }  
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
     public Contato(){};
 }
