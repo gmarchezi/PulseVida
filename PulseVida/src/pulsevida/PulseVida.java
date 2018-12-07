@@ -26,7 +26,6 @@ public class PulseVida {
         CriaBancoSQLite _criarBanco = new CriaBancoSQLite();        
         persistencia.UsuarioDAO _userDAO = new persistencia.UsuarioDAO();
         persistencia.ContatoDAO _cttDAO = new persistencia.ContatoDAO();
-        persistencia.CttUsuarioDAO _cttUserDAO = new persistencia.CttUsuarioDAO();
         //persistencia.HorarioRemedioDAO _horarioDAO = new persistencia.HorarioRemedioDAO();
         
         //Cria as seguintes tabelas, caso as mesmas não existam.
@@ -36,12 +35,11 @@ public class PulseVida {
         String opcao = JOptionPane.showInputDialog("Escolha a opção"
                 + "\n(1)Cadastrar Usuario"
                 + "\n(2)Cadastrar Contato"
-                + "\n(3)Cadastra contato do Usuario"
-                + "\n(4)Listar Usuarios Cadastrados"
-                + "\n(5)Listar Contatos Cadastrados"
-                + "\n(6)Deletar Contato"
-                + "\n(7)Deletar Usuario"
-                + "\n(8)Simular monitoramento\n");
+                + "\n(3)Listar Usuarios Cadastrados"
+                + "\n(4)Listar Contatos Cadastrados"
+                + "\n(5)Deletar Contato"
+                + "\n(6)Deletar Usuario"
+                + "\n(7)Simular monitoramento\n");
         int opcaoEscolhida = Integer.parseInt(opcao);
         
         //Listar listar = new Listar();
@@ -76,38 +74,30 @@ public class PulseVida {
                     break;
                 }
             case 3:
-                {
-                    String login = JOptionPane.showInputDialog("Login do usuario':");
-                    String celular = JOptionPane.showInputDialog("Celular do contato:");
-                    CttUsuario cttUsuario = new CttUsuario(login,celular);                    
-                    _cttUserDAO.salvar(cttUsuario);
-                    break;
-                }
-            case 4:
                 {                    
                     ArrayList list = _userDAO.selectTable();
                     listaUsuarios(list);
                     break;
                 }
-            case 5:
+            case 4:
                 {                    
                     ArrayList list = _cttDAO.selectTable();
                     listaContatos(list);
                     break;
                 }
-            case 6:
+            case 5:
                 {
                     String id = JOptionPane.showInputDialog("ID do contato:");
                     _cttDAO.deleteRecord(Integer.parseInt(id));
                     break;
                 }
-            case 7:
+            case 6:
                 {
                     String id = JOptionPane.showInputDialog("ID do usuario:");
                     _userDAO.deleteRecord(Integer.parseInt(id));
                     break;
                 }
-            case 8:
+            case 7:
                 {
                     persistencia.Monitor _monitor = new persistencia.Monitor();
                     _monitor.simularMonitoramento();
