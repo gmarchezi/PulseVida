@@ -20,9 +20,6 @@ public class MonitorTest {
     @Test
     public void testDisparanotificacao() {
         Monitor instance = new Monitor();
-        boolean gerouNotificacao;
-        boolean gerouNotificacao1;
-        boolean gerouNotificacao2;
         try {
             gerouNotificacao = instance.disparaNotificacao(-9, "Gabriel", "Guiga", "997483568");
             
