@@ -89,7 +89,8 @@ public class PulseVida {
                             "E-mail: " + usuario.getEmail() + "\n" +
                             "Celular: " + usuario.getCelular() + "\n" +                           
                             "Login: " + usuario.getLogin() + "\n" 
-                            ); 
+                            );
+                    break;
                 }
             case 5:
                 {                    
