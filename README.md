@@ -1,5 +1,7 @@
 # PulseVida
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7d8654c37a034f97bd6145d8d5a80123)](https://app.codacy.com/app/Guilherme-Bodart/PulseVida?utm_source=github.com&utm_medium=referral&utm_content=gmarchezi/PulseVida&utm_campaign=Badge_Grade_Dashboard)
+
 Trabalho desenvolvido na disciplina de Programação Orientada a Objetos I do curso de Bacharelado em Sistemas de Informação, IFES Serra.<br>
 
 Grupo POO: Guilherme Bodart, Higor Rebello, Gabriel Marchezi.<br>
